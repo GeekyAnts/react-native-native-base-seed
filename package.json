@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "postinstall": "remotedev-debugger",
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "jest"
   },
   "dependencies": {
     "lodash": "^4.13.1",
@@ -21,9 +22,55 @@
     "rx": "^4.1.0"
   },
   "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-jest": "^13.2.2",
+    "babel-preset-jest": "^13.2.2",
+    "babel-preset-react-native": "^1.9.0",
     "chai": "^3.5.0",
+    "jest-cli": "^13.2.3",
     "mocha": "^2.5.3",
     "remote-redux-devtools": "^0.3.3",
     "remote-redux-devtools-on-debugger": "^0.4.6"
+  },
+  "jest": {
+    "setupEnvScriptFile": "./node_modules/react-native/jestSupport/env.js",
+    "haste": {
+      "defaultPlatform": "ios",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "providesModuleNodeModules": [
+        "react-native"
+      ]
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testFileExtensions": [
+      "es6",
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6",
+      "ios.js",
+      "android.js"
+    ],
+    "unmockedModulePathPatterns": [
+      "react",
+      "react-addons-test-utils",
+      "promise",
+      "source-map",
+      "key-mirror",
+      "immutable",
+      "fetch",
+      "redux",
+      "redux-thunk",
+      "fbjs"
+    ],
+    "collectCoverage": false,
+    "verbose": true
   }
 }
