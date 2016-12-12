@@ -77,12 +77,12 @@ class App extends Component {
                   <Text style={{ color: theme.brandPrimary, textAlign: 'center', marginBottom: 15, fontSize: 15 }}>
                     Installing update...
                   </Text> :
-                    <View style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'center', padding: 20 }}>
-                      <Text style={{ color: theme.brandPrimary, textAlign: 'center', marginBottom: 15, fontSize: 15 }}>
+                  <View style={{ flex: 1, alignSelf: 'stretch', justifyContent: 'center', padding: 20 }}>
+                    <Text style={{ color: theme.brandPrimary, textAlign: 'center', marginBottom: 15, fontSize: 15 }}>
                         Downloading update... {`${parseInt(this.state.downloadProgress, 10)} %`}
-                      </Text>
-                      <ProgressBar color="theme.brandPrimary" progress={parseInt(this.state.downloadProgress, 10)} />
-                    </View>
+                    </Text>
+                    <ProgressBar color="theme.brandPrimary" progress={parseInt(this.state.downloadProgress, 10)} />
+                  </View>
                 }
               </View>
             </Modal>

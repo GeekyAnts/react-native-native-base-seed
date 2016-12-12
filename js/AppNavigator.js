@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import { Drawer } from 'native-base';
 import { actions } from 'react-native-navigation-redux-helpers';
 
-import { closeDrawer } from './actions/drawer';
+import { closeDrawer } from './store/app/actions';
 
 import Index from './components/index/';
+import Index2 from './components/index2/';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
@@ -76,6 +77,8 @@ class AppNavigator extends Component {
         return <SplashPage />;
       case 'index':
         return <Index />;
+      case 'index2':
+        return <Index2 />;
       default :
         return <Index />;
     }
@@ -132,8 +135,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  drawerState: state.drawer.drawerState,
-  navigation: state.cardNavigation,
+  drawerState: state.app.drawerState,
+  navigation: state.navigation,
 });
 
 export default connect(mapStateToProps, bindAction)(AppNavigator);

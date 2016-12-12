@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'native-base';
 
-import navigateTo from '../../actions/sideBarNav';
+import navigateTo from '../../store/navigation/actions';
 
 class SideBar extends Component {
 
@@ -17,7 +17,7 @@ class SideBar extends Component {
   render() {  // eslint-disable-line class-methods-use-this
     return (
       <View />
-      );
+    );
   }
 }
 
