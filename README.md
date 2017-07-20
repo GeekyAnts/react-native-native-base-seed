@@ -1,4 +1,4 @@
-## Not being maintained at the moment
+## No longer maintained
 # React Native-NativeBase Seed v5.2.0
 
 React Native-NativeBase Seed is a basic configuration that every React Native app must have.
